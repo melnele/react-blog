@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -7,7 +7,7 @@
   height: 40vmin;
 }
 
-.App-header {
+.App-header-sign {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -18,8 +18,42 @@
   color: white;
 }
 
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 .App-link {
   color: #61dafb;
+}
+#signout{
+  display: grid;
+  justify-content: right;
+  margin-right: 2.5em;
+  margin-top: 1em;
+}
+
+#username{
+display: inline;
+margin: auto;
+}
+
+#posttext{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 8em;
+}
+
+#postsubmit{
+  float: right;
+  margin-right: 10em;
 }
 
 @keyframes App-logo-spin {

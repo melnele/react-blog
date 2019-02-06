@@ -10,7 +10,7 @@ var express = require('express'),
   app = express();
 
 app.set('secret', config.SECRET);
-var server = app.listen(process.env.PORT || 3000, function () {
+var server = app.listen(process.env.PORT || 8080, function () {
     var port = server.address().port;
     console.log("App now running on port", port);
 });
@@ -25,7 +25,7 @@ app.use(
 app.use(helmet());
 app.use(compression());
 app.use(bodyParser.json());
-var distDir = __dirname + "/dist/";
+var distDir = __dirname + "/build/";
 app.use(express.static(distDir));
 app.use(
   bodyParser.urlencoded({

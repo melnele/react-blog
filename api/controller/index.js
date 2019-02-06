@@ -50,7 +50,7 @@ module.exports.signup = function (req, res, next) {
                             res.status(201).json({
                                 err: null,
                                 msg: 'Registration successful.',
-                                data: newUser.toObject()
+                                data: null
                             });
                         });
                     })
