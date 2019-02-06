@@ -29,7 +29,7 @@ class App extends Component {
           'authorization': sessionStorage.getItem("token")
         }
       };
-      await axios.post('http://localhost:8080/api/blog/create', this.state, config);
+      await axios.post('/api/blog/create', this.state, config);
     } catch (error) {
       alert(error.response.data.msg);
     }
@@ -92,8 +92,8 @@ class SignUpForm extends Component {
 
   async signup() {
     try {
-      await axios.post('http://localhost:8080/api/user/signup', this.state);
-      var token = (await axios.post('http://localhost:8080/api/user/signin', this.state)).data;
+      await axios.post('/api/user/signup', this.state);
+      var token = (await axios.post('/api/user/signin', this.state)).data;
       sessionStorage.setItem("token", token.data);
       sessionStorage.setItem("username", this.state.username);
     } catch (error) {
@@ -107,7 +107,7 @@ class SignUpForm extends Component {
 
   async signin() {
     try {
-      var token = (await axios.post('http://localhost:8080/api/user/signin', this.state)).data;
+      var token = (await axios.post('/api/user/signin', this.state)).data;
       sessionStorage.setItem("token", token.data);
       sessionStorage.setItem("username", this.state.username);
     } catch (error) {
@@ -154,7 +154,7 @@ class BlogPosts extends Component {
         'authorization': sessionStorage.getItem("token")
       }
     };
-    axios.get('http://localhost:8080/api/blog/getall', config)
+    axios.get('/api/blog/getall', config)
       .then(res => this.setState({ data: res.data.data }));
   }
 
